@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BreatheEasy</title>
+    <link rel="stylesheet" href="Airwebsite.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+          crossorigin=""/>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="site-header">
+        <h1 class="brand-title">BreatheEasy</h1>
+        <div class="navbar">
+            <a href="airqwebsite.html">Home</a>
+            <a href="airqualitysubmission.html">Upload your data</a>
+            <a href="#info">Info</a>
+            <a href="#contact">Contact Us</a>
+			<button id="translateBtn" onclick="translateToVietnamese()">
+				<img src="vietnamese-flag.png" alt="Vietnamese">
+			</button>
+        </div>
+    </header>
+    <div class="hero-section">
+        <div class="hero-text">
+            <h2>Air Quality Matters</h2>
+            <p>BreatheEasy provides you with accurate and reliable air quality data. 
+			You can easily upload your air quality measurements and view real-time air quality index (AQI) readings for Vietnam. 
+			Our website is inspired by the USGS website and aims to be a valuable resource for air quality measurements, prioritizing ease of navigation, accessibility, community engagement, and environmental monitoring.</p>
+        </div>
+    </div>
+	<div id="map"></div>
+    <div class="form-container">
+        <form id="dataForm">
+			<div class="submission-info">
+				<p>Everyone is invited to contribute to our community-driven effort by using their own sensors to upload air quality measurements. This initiative aims to make air quality data more transparent and accessible, particularly in Vietnam, helping everyone make informed decisions about their health and environment.</p>
+			</div>
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" name="firstName" required>
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="lastName" required>
+            <label for="dataMeasured">Data Measured:</label>
+            <textarea id="dataMeasured" name="dataMeasured" required></textarea>
+            <label for="locationMap">Select Location:</label>
+            <div id="locationMap" style="height: 250px;"></div>
+            <input type="hidden" id="latitude" name="latitude">
+            <input type="hidden" id="longitude" name="longitude">
+            <label for="dateMeasured">Date of the data measured:</label>
+            <input type="date" id="dateMeasured" name="dateMeasured" required>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+	<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+            crossorigin=""></script>
+    <script src="Airwebsite.js"></script>
+</body>
+</html>
